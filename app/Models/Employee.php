@@ -22,4 +22,17 @@ class Employee extends Model
         'is_verified',
         'verified_at',
     ];
+
+    // one to one
+    public function role()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    // one to many
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
+
 }

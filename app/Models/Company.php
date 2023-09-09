@@ -15,4 +15,23 @@ class Company extends Model
         'logo',
     ];
 
+    // many to many
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function role()
+    {
+        return $this->hasMany(Role::class);
+    }
+
+    // one to many
+    public function teams()
+    {
+        return $this->hasMany(Team::class);
+        // return $this->hasMany(Team::class, 'company_id', 'id');
+
+    }
+
 }
