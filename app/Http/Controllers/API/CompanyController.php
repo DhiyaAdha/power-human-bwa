@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
+use Exception;
+use App\Models\User;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\CreateCompanyRequest;
 
 class CompanyController extends Controller
 {
