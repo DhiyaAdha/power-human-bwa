@@ -46,6 +46,7 @@ class CompanyController extends Controller
             $companies->paginate($limit),
             'Companies found'
         );
+        //
     }
 
     public function create(CreateCompanyRequest $request)
