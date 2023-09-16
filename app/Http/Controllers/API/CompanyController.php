@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use Exception;
-use App\Models\User;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CreateCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
+use App\Models\User;
+use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
 {
@@ -46,7 +46,6 @@ class CompanyController extends Controller
             $companies->paginate($limit),
             'Companies found'
         );
-        //
     }
 
     public function create(CreateCompanyRequest $request)

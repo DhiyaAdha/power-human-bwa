@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class CreateCompanyRequest extends FormRequest
+class CreateEmployeeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,13 @@ class CreateCompanyRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'email' => 'required|string|email|max:255',
+            'gender' => 'required|string|in:MALE,FEMALE',
+            'age' => 'required|integer',
+            'phone' => 'required|string|max:255',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'team_id' => 'required|integer|exists:teams,id',
+            'role_id' => 'required|integer|exists:roles,id',
         ];
     }
 }

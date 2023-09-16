@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
-use Exception;
-use App\Models\User;
-
-use Illuminate\Http\Request;
 use App\Helpers\ResponseFormatter;
-use Laravel\Fortify\Rules\Password;
+use Exception;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Fortify\Rules\Password;
 
 class UserController extends Controller
 {
@@ -92,7 +92,3 @@ class UserController extends Controller
         return ResponseFormatter::success($user, 'Fetch success');
     }
 }
-
-
-    
-
